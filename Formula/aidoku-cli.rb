@@ -5,21 +5,21 @@
 class AidokuCli < Formula
   desc "Aidoku development toolkit"
   homepage "https://github.com/beerpiss/aidoku-cli"
-  version "0.3.2"
+  version "0.3.3"
   license "0BSD"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/beerpiss/aidoku-cli/releases/download/v0.3.2/aidoku-cli_0.3.2_macos_arm64.tar.gz"
-      sha256 "3a4af5e62d6dff08f0cdad11eb22780798883ff6b541e4ff92a7e450bc5efc9d"
+      url "https://github.com/beerpiss/aidoku-cli/releases/download/v0.3.3/aidoku-cli_0.3.3_macos_arm64.tar.gz"
+      sha256 "ebdd354cc6d603a7f7d3097fc98b5d8985cfe28b4a34f87cbb606b66ec21d836"
 
       def install
         bin.install "aidoku"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/beerpiss/aidoku-cli/releases/download/v0.3.2/aidoku-cli_0.3.2_macos_x86_64.tar.gz"
-      sha256 "7ad0afade1e2eeb768540bf88e780f5be6c27eae79f8b776cd2e8b1ca07df2d3"
+      url "https://github.com/beerpiss/aidoku-cli/releases/download/v0.3.3/aidoku-cli_0.3.3_macos_x86_64.tar.gz"
+      sha256 "220b9f6dc871d7192210d02c6c4b93586bcd0375a83ca7ebe0fa428053ca97c5"
 
       def install
         bin.install "aidoku"
@@ -28,17 +28,17 @@ class AidokuCli < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/beerpiss/aidoku-cli/releases/download/v0.3.2/aidoku-cli_0.3.2_linux_arm64.tar.gz"
-      sha256 "1c2b7c7e02ca4937e55e79e78c1a79b4172f41378b92033e37d23eb637349b2b"
+    if Hardware::CPU.intel?
+      url "https://github.com/beerpiss/aidoku-cli/releases/download/v0.3.3/aidoku-cli_0.3.3_linux_x86_64.tar.gz"
+      sha256 "f99fb3141ba1aae2bb146ebb6d9f883987ba22d1485d08a61abcb34a283a5c4f"
 
       def install
         bin.install "aidoku"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/beerpiss/aidoku-cli/releases/download/v0.3.2/aidoku-cli_0.3.2_linux_x86_64.tar.gz"
-      sha256 "0182bbcfa491897d9ce4d77711a4f91e0aa24d319998528391df8867f72ff5a5"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/beerpiss/aidoku-cli/releases/download/v0.3.3/aidoku-cli_0.3.3_linux_arm64.tar.gz"
+      sha256 "048a75471509f2b46c9e06447b1b69087fc0bcdc3d230bbf5ad5852485a14bf2"
 
       def install
         bin.install "aidoku"
