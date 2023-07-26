@@ -5,13 +5,13 @@
 class AidokuCli < Formula
   desc "Aidoku development toolkit"
   homepage "https://github.com/Aidoku/aidoku-cli"
-  version "0.5.2"
+  version "0.5.3"
   license "0BSD"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/Aidoku/aidoku-cli/releases/download/v0.5.2/aidoku-cli_0.5.2_macos_arm64.tar.gz"
-      sha256 "1b950b5bbceac3e982ba61b3ab9be2f02741ef2f938002af8f95f44517972cb4"
+    if Hardware::CPU.intel?
+      url "https://github.com/Aidoku/aidoku-cli/releases/download/v0.5.3/aidoku-cli_0.5.3_macos_x86_64.tar.gz"
+      sha256 "83e464044d60d65dad6210ae3c627b0a537c15602eb5d489681e36256c11a089"
 
       def install
         bin.install "aidoku"
@@ -20,9 +20,9 @@ class AidokuCli < Formula
         (fish_completion/"aidoku.fish").write `#{bin}/aidoku completion fish`
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/Aidoku/aidoku-cli/releases/download/v0.5.2/aidoku-cli_0.5.2_macos_x86_64.tar.gz"
-      sha256 "bc61dd9d3afa96b7d44b8e0dda474952ae5d9dee4059009dc29a3b5cb023ca95"
+    if Hardware::CPU.arm?
+      url "https://github.com/Aidoku/aidoku-cli/releases/download/v0.5.3/aidoku-cli_0.5.3_macos_arm64.tar.gz"
+      sha256 "b4431484df2c94502ec05b608c7bb0d44ba5520a18ee1d7c25618162ac28c686"
 
       def install
         bin.install "aidoku"
@@ -35,8 +35,8 @@ class AidokuCli < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Aidoku/aidoku-cli/releases/download/v0.5.2/aidoku-cli_0.5.2_linux_arm64.tar.gz"
-      sha256 "9a3674936b86937f145f9fa8cc4719038aaac79a5d1e464d4ba3b6710401e0b2"
+      url "https://github.com/Aidoku/aidoku-cli/releases/download/v0.5.3/aidoku-cli_0.5.3_linux_arm64.tar.gz"
+      sha256 "cb2046f94ee7bcaa01d5075d387c64ce7b92b38e5286dd26fdf2d53d60c0735e"
 
       def install
         bin.install "aidoku"
@@ -46,8 +46,8 @@ class AidokuCli < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/Aidoku/aidoku-cli/releases/download/v0.5.2/aidoku-cli_0.5.2_linux_x86_64.tar.gz"
-      sha256 "84a934315ef26cdd6e1cb0c37f99cf93cda7b375c9d008db3213181a2a61fb66"
+      url "https://github.com/Aidoku/aidoku-cli/releases/download/v0.5.3/aidoku-cli_0.5.3_linux_x86_64.tar.gz"
+      sha256 "b29b1b0b0e9affc67cd3ad46a1e75a81664b7b5b71a16af44af881447569a119"
 
       def install
         bin.install "aidoku"
